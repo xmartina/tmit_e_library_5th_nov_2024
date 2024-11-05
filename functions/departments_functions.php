@@ -1,7 +1,7 @@
 <?php
-include_once($rootDir.'include/config.php');
+include_once(__DIR__.'/../include/config.php');
 
-if (!isset($conn)) {
+if (!isset($landing_conn)) {
     die("Database connection error.");
 }
 
@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
 
     // Fetch the department name using the dpt_id
     $dept_sql = "SELECT dep_name FROM departments WHERE id = ?";
-    $dept_stmt = $conn->prepare($dept_sql);
+    $dept_stmt = $landing_conn->prepare($dept_sql);
     $dept_stmt->bind_param("i", $dpt_id);
     $dept_stmt->execute();
     $dept_result = $dept_stmt->get_result();
@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
 
     // Fetch the books from the e_book table using the dpt_id
     $sql = "SELECT id, book_name, book_link, book_type, book_cover, author FROM e_book WHERE dpt_id = ?";
-    $stmt = $conn->prepare($sql);
+    $stmt = $landing_conn->prepare($sql);
     $stmt->bind_param("i", $dpt_id);
     $stmt->execute();
     $result = $stmt->get_result();

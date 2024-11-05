@@ -1,7 +1,7 @@
 <?php
 $rootDir = '/home/matagram/domains/e-library.tmit.com.ng/public_html/';
-include_once($rootDir . 'header.php');
-include_once($rootDir . 'functions/departments_functions.php');
+include_once(__DIR__ . '/../../header.php');
+include_once(__DIR__ . '/../../functions/departments_functions.php');
 ?>
 
 
