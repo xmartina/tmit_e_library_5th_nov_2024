@@ -1,5 +1,5 @@
 <?php
-include_once($rootDir.'include/functions.php');
+include_once(__DIR__.'/../../include/functions.php');
 // General Settings
 $sql = "SELECT * FROM general_settings"; // Adjust the table name if different
 $result = $conn->query($sql);

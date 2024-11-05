@@ -1,9 +1,9 @@
 <?php
 $page_name = 'Login';
-$rootDir = '/home/multistream6/domains/thomas.matagram.com/public_html/';
+$rootDir = '/home/matagram/domains/e-library.tmit.com.ng/public_html/';
 $siteUrl = 'https://thomas.matagram.com/';
-include_once($rootDir . 'cms/functions/login_function.php');
-include_once($rootDir . 'cms/partials/header.php');
+include_once(__DIR__ . '/../../cms/functions/login_function.php');
+include_once(__DIR__ . '/../../cms/partials/header.php');
 ?>
 <section class="auth bg-base d-flex flex-wrap">
     <div class="auth-left d-lg-block d-none">

@@ -12,35 +12,6 @@
         <li class="angle-shape drop_arrow text-capitalize"><a href="javascript:void(0);">Departments</a>
 <!--        <li class="angle-shape drop_arrow"><a href="collections/all.html">DEPARTMENTS</a>-->
             <ul class="disturb_menu d-none">
-
-
-                <li class="sub-menu mega-menu-img sub-menu-li">
-                    <a href="/front_added/pdf/digital_electronics.pdf"><img
-                            src="<?= $rootDir ?>cdn/shop/collections/p3f10c.png?v=1698470305"
-                            alt="Featured Books" loading="lazy"/></a>
-                    <span><a href="/front_added/pdf/digital_electronics.pdf" title="">Featured Books</a> </span>
-<!--                    <span><a href="collections/featured-books.html" title="">Featured Books</a> </span>-->
-                </li>
-
-
-                <li class="sub-menu mega-menu-img sub-menu-li">
-                    <a href="/front_added/pdf/com-113-intro-to-computer-programming-theory.pdf"><img
-                            src="<?= $rootDir ?>cdn/shop/collections/2d8ec.png?v=1698470765"
-                            alt="Best Sellers" loading="lazy"/></a>
-                    <span><a href="/front_added/pdf/com-113-intro-to-computer-programming-theory.pdf" title="">Best Sellers</a> </span>
-<!--                    <span><a href="collections/best-sellers.html" title="">Best Sellers</a> </span>-->
-                </li>
-
-
-                <li class="sub-menu mega-menu-img sub-menu-li">
-                    <a href="collections/most-viewed.html"><img
-                            src="<?= $rootDir ?>cdn/shop/collections/p880c1.png?v=1698470737"
-                            alt="Most Viewed" loading="lazy"/></a>
-                    <span><a href="javascript:void(0);" title="">Most Viewed</a> </span>
-<!--                    <span><a href="collections/most-viewed.html" title="">Most Viewed</a> </span>-->
-                </li>
-
-
                 <li class="mega-menu-li"><a class="menu-title text-capitalize" href="javascript:void(0);">Departments In Our Institute</a>
 <!--                <li class="mega-menu-li"><a class="menu-title" href="collections.html">DEPARTMENTS IN OUR INSTITUTE</a>-->
                     <ul>
@@ -53,7 +24,7 @@
 
                         // Fetch departments from the database
                         $sql = "SELECT id, book_id, dep_name FROM departments";
-                        $result = $conn->query($sql);
+                        $result = $landing_conn->query($sql);
 
                         // Check if the query was successful
                         if ($result && $result->num_rows > 0) {
@@ -75,8 +46,6 @@
 
                     </ul>
                 </li>
-
-
             </ul>
         </li>
         <li class="angle-shape drop_arrow"><a href="javascript:void(0);">Our Resources</a>

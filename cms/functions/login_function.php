@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id']) && strpos($_SERVER['REQUEST_URI'], '/cms/login/
 }
 
 // Include your database functions and connection
-include_once($rootDir . 'cms/functions/main_function.php');
+include_once(__DIR__ . '/../../cms/functions/main_function.php');
 
 // Ensure database connection is available
 if (!isset($conn)) {
