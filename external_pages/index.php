@@ -1,5 +1,5 @@
 <?php
-$rootDir = '/home/multistream6/domains/thomas.matagram.com/public_html/';
+$rootDir = '/home/matagram/domains/e-library.tmit.com.ng/public_html/';
 include_once ('../header.php');
 include_once ('../functions/external_pages_function.php');
 //if ($_SERVER['REQUEST_URI'] == 1){
