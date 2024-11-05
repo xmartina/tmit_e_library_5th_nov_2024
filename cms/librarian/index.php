@@ -1,9 +1,8 @@
 <?php
 $page_name = 'Librarian Portal';
 $rootDir = '/home/multistream6/domains/thomas.matagram.com/public_html/';
-$siteUrl = 'https://thomas.matagram.com/';
-include_once($rootDir . 'cms/functions/librarian_function.php');
-include_once($rootDir . 'cms/partials/header.php');
+include_once(__DIR__ . '/../../cms/functions/librarian_function.php');
+include_once(__DIR__ . '/../../cms/partials/header.php');
 ?>
 
     <!--Section 1A-->
