@@ -15,7 +15,6 @@
                 <li class="mega-menu-li"><a class="menu-title text-capitalize" href="javascript:void(0);">Departments In Our Institute</a>
 <!--                <li class="mega-menu-li"><a class="menu-title" href="collections.html">DEPARTMENTS IN OUR INSTITUTE</a>-->
                     <ul>
-
                         <?php
                         // Ensure database connection is available
                         if (!isset($conn)) {
@@ -28,23 +27,34 @@
 
                         // Check if the query was successful
                         if ($result && $result->num_rows > 0) {
-                            echo '<ul>'; // Start the unordered list
+                            $counter = 0; // Counter to keep track of departments
+
                             while ($row = $result->fetch_assoc()) {
+                                if ($counter % 6 == 0) {
+                                    // Start a new list every 6 items
+                                    if ($counter != 0) {
+                                        echo '</ul>'; // Close previous list
+                                    }
+                                    echo '<ul>'; // Start a new list
+                                }
+
                                 $book_id = $row['book_id'];
                                 $dep_name = htmlspecialchars($row['dep_name']); // Sanitize the department name for HTML output
                                 $link = $siteUrl . 'departments/pages?id=' . $book_id; // Construct the link with the book_id as a GET parameter
 
                                 // Generate the list item with the link
                                 echo '<li><a href="' . $link . '">' . $dep_name . '</a></li>';
+
+                                $counter++;
                             }
-                            echo '</ul>'; // End the unordered list
+
+                            echo '</ul>'; // Close the final unordered list
                         } else {
                             echo 'No departments found.';
                         }
                         ?>
-
-
                     </ul>
+
                 </li>
             </ul>
         </li>
