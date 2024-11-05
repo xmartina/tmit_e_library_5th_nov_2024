@@ -7,9 +7,9 @@ $password = "tmit_landing_page"; // Your database password
 $dbname = "matagram_tmit_landing_page"; // Your database name
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$landing_conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($landing_conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $landing_conn->connect_error);
 }

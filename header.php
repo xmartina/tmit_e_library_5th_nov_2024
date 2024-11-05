@@ -1,5 +1,5 @@
 <?php
-include_once ($rootDir.'include/functions.php');
+include_once (__DIR__.'/include/functions.php');
 ?>
 
 <!doctype html>
