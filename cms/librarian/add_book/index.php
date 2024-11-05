@@ -161,19 +161,33 @@ include_once($rootDir . 'cms/partials/header.php');
                             <label class="form-label">Department</label>
                             <select name="dpt_id" class="form-control" required>
                                 <option value="">Select Department</option>
-                                <option value="1">Electrical/Electronics Engineering</option>
-                                <option value="2">Computer Engineering</option>
-                                <option value="3">Computer Science</option>
-                                <option value="4">Statistics</option>
-                                <option value="5">Health Information Management</option>
-                                <option value="6">Pharmaceutical Technology</option>
-                                <option value="7">Community/Public Health</option>
-                                <option value="8">Medical Laboratory Science</option>
-                                <option value="9">Accountancy</option>
-                                <option value="10">Business Administration</option>
-                                <option value="11">Public Administration</option>
+
+                                <?php
+                                // Ensure database connection is available
+                                if (!isset($conn)) {
+                                    die("Database connection error.");
+                                }
+
+                                // Fetch departments from the database
+                                $sql = "SELECT id, dep_name FROM departments";
+                                $result = $landing_conn->query($sql);
+
+                                // Check if the query was successful
+                                if ($result && $result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        $dept_id = $row['id'];
+                                        $dep_name = htmlspecialchars($row['dep_name']); // Sanitize for HTML output
+
+                                        // Output each department as an option
+                                        echo '<option value="' . $dept_id . '">' . $dep_name . '</option>';
+                                    }
+                                } else {
+                                    echo '<option value="">No departments available</option>';
+                                }
+                                ?>
                             </select>
                         </div>
+
 
                         <!-- Book Cover Upload -->
                         <div class="col-12">
