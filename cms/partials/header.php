@@ -34,8 +34,8 @@
     // Check if the current URL contains '/librarian/'
     if (strpos($_SERVER['REQUEST_URI'], '/librarian/') !== false) {
         // Include the Slick Slider CSS only if the URL contains '/librarian/'
-        include_once($rootDir . 'cms/partials/side_bar.php');
-        include_once($rootDir . 'cms/partials/top_header.php');
+        include_once(__DIR__ . '/../../cms/partials/side_bar.php');
+        include_once(__DIR__ . '/../../cms/partials/top_header.php');
     }
     ?>
 

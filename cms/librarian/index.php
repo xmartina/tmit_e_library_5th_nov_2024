@@ -203,7 +203,7 @@ include_once(__DIR__ . '/../../cms/partials/header.php');
 
                         <div class="mt-32">
 
-                            <?php include_once($rootDir . 'cms/librarian/new_students.php'); ?>
+                            <?php include_once(__DIR__ . '/../../cms/librarian/new_students.php'); ?>
 
                         </div>
 
@@ -215,5 +215,5 @@ include_once(__DIR__ . '/../../cms/partials/header.php');
         </div>
     </div>
 <?php
-include_once($rootDir . 'cms/partials/footer.php');
+include_once(__DIR__ . '/../../cms/partials/footer.php');
 ?>
