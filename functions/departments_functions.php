@@ -12,6 +12,12 @@ if (isset($_GET['id'])) {
     // Fetch the department name using the dpt_id
     $dept_sql = "SELECT dep_name FROM departments WHERE id = ?";
     $dept_stmt = $landing_conn->prepare($dept_sql);
+
+    // Check if the statement was prepared successfully
+    if ($dept_stmt === false) {
+        die("Error preparing statement: " . $landing_conn->error);
+    }
+
     $dept_stmt->bind_param("i", $dpt_id);
     $dept_stmt->execute();
     $dept_result = $dept_stmt->get_result();
@@ -28,6 +34,12 @@ if (isset($_GET['id'])) {
     // Fetch the books from the e_book table using the dpt_id
     $sql = "SELECT id, book_name, book_link, book_type, book_cover, author FROM e_book WHERE dpt_id = ?";
     $stmt = $landing_conn->prepare($sql);
+
+    // Check if the statement was prepared successfully
+    if ($stmt === false) {
+        die("Error preparing statement: " . $landing_conn->error);
+    }
+
     $stmt->bind_param("i", $dpt_id);
     $stmt->execute();
     $result = $stmt->get_result();
