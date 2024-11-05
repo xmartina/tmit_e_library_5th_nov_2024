@@ -33,7 +33,7 @@ if (isset($_GET['id'])) {
 
     // Fetch the books from the e_book table using the dpt_id
     $sql = "SELECT id, book_name, book_link, book_type, book_cover, author FROM e_book WHERE dpt_id = ?";
-    $stmt = $landing_conn->prepare($sql);
+    $stmt = $conn->prepare($sql);
 
     // Check if the statement was prepared successfully
     if ($stmt === false) {
