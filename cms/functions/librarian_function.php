@@ -20,54 +20,9 @@ $student_img = $row['img'];
 $gender = $row['gender'];
 
 $full_name = $fname . ' ' . $lname;
-switch ($student_dpt) {
-    case 1:
-        $student_dpt = 'Electrical/Electronics Engineering';
-        break;
-    case 2:
-        $student_dpt = 'Computer Engineering';
-        break;
-    case 3:
-        $student_dpt = 'Computer Science';
-        break;
-    case 4:
-        $student_dpt = 'Statistics';
-        break;
-    case 5:
-        $student_dpt = 'Health Information Management';
-        break;
-    case 6:
-        $student_dpt = 'Pharmaceutical Technology';
-        break;
-    case 7:
-        $student_dpt = 'Community/Public Health';
-        break;
-    case 8:
-        $student_dpt = 'Medical Laboratory Science';
-        break;
-    case 9:
-        $student_dpt = 'Accountancy';
-        break;
-    case 10:
-        $student_dpt = 'Business Administration';
-        break;
-    case 11:
-        $student_dpt = 'Public Administration';
-        break;
-    default:
-        $student_dpt = 'Unknown Department'; // Handle any unexpected department ID
-        break;
-}
 if ($student_img == '') {
     $student_img = 'default.png';
 }
-
-if ($gender == 1) {
-    $gender = 'male';
-} elseif ($gender == 2) {
-    $gender = 'female';
-}
-
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
