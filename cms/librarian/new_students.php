@@ -1,6 +1,6 @@
 <?php
 // Your SQL query to fetch all records from the e_book table
-$portal_sql = "SELECT * FROM students"; // Adjust the table name if different
+$portal_sql = "SELECT * FROM students WHERE is_registered = 0"; // Adjust the table name if different
 $portal_result = $portal_conn->query($portal_sql);
 
 // Check if there are any results
