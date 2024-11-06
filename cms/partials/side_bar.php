@@ -13,26 +13,8 @@
         <ul class="sidebar-menu" id="sidebar-menu">
             <li class="dropdown">
                 <a href="javascript:void(0)">
-                    <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
                     <span>Dashboard</span>
                 </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="javascript:void(0);"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> AI</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> CRM</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> eCommerce</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Cryptocurrency</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> Investment</a>
-                    </li>
-                </ul>
             </li>
             <li class="sidebar-menu-group-title">Action</li>
             <li class="dropdown">
@@ -42,7 +24,7 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="javascript:void(0);"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> List E-Books</a>
+                        <a href="<?=$cms_url?>librarian/view_all_books"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> List E-Books</a>
                     </li>
                     <li>
                         <a href="<?=$siteUrl?>cms/librarian/add_book"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Add E-Book</a>

@@ -17,3 +17,4 @@ $favicon = $row["favicon"];
 $footer_dec = $row["footer_dec"];
 $footer_copyright = $row["footer_copyright"];
 $siteUrl = $site_url;
+$cms_url = $site_url . '/cms/';

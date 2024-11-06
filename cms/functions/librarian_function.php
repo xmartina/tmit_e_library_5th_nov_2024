@@ -90,3 +90,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     $stmt->close();
     $conn->close();
 }
+
+if (isset($_POST['delete_book'])){
+
+    if (!isset($conn)) {
+        die("Database connection error.");
+    }
+
+// Check if the book ID is provided in the URL
+    if (isset($_GET['book_id'])) {
+        $book_id = intval($_GET['book_id']); // Sanitize the book ID to prevent SQL injection
+
+        // Check if the book exists
+        $sql_check = "SELECT * FROM e_book WHERE id = ?";
+        $stmt_check = $conn->prepare($sql_check);
+        $stmt_check->bind_param("i", $book_id);
+        $stmt_check->execute();
+        $result_check = $stmt_check->get_result();
+
+        if ($result_check && $result_check->num_rows > 0) {
+            // Book exists, proceed with deletion
+            $sql_delete = "DELETE FROM e_book WHERE id = ?";
+            $stmt_delete = $conn->prepare($sql_delete);
+            $stmt_delete->bind_param("i", $book_id);
+
+            if ($stmt_delete->execute()) {
+                header('Location: /cms/librarian/book_list.php?msg=book_deleted_successfully');
+                exit();
+            } else {
+                header('Location: /cms/librarian/book_list.php?msg=error_deleting_book');
+                exit();
+            }
+
+            $stmt_delete->close();
+        } else {
+            // Book not found
+            header('Location: /cms/librarian/book_list.php?msg=book_not_found');
+            exit();
+        }
+
+        $stmt_check->close();
+    } else {
+        // No book ID provided
+        header('Location: /cms/librarian/book_list.php?msg=invalid_book_id');
+        exit();
+    }
+
+    $conn->close();
+
+
+}
