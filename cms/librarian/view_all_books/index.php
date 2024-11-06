@@ -125,7 +125,7 @@ include_once(__DIR__ . '/../../../cms/partials/header.php');
 
             // Display each book using the template
             echo '
-        <div class="col-xxl-3 col-sm-6">
+        <div class="col-xxl-3 col-md-4 col-sm-6">
             <div class="card h-100 radius-12">
                 <img style="max-height:300px;max-width: 100%;object-fit: cover;object-position: center;" src="' . $book_cover . '" class="card-img-top" alt="' . $book_name . ' cover image">
                 <div class="card-body p-16 text-end">
