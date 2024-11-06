@@ -103,7 +103,7 @@ include_once(__DIR__ . '/../../../cms/partials/header.php');
             });
         </script>
     </div>
-<div class="row">
+<div class="row mb-4">
     <?php
     // Ensure database connection is available
     if (!isset($conn)) {
@@ -133,7 +133,7 @@ include_once(__DIR__ . '/../../../cms/partials/header.php');
                     <p class="card-text text-neutral-600">Author: ' . $author . '</p>
                     <div class="d-flex flex-wrap align-items-center justify-content-end gap-3">
                         <a href="' . $book_link . '" target="_blank" class="btn btn-primary-100 text-white text-primary-600 px-12 py-10 d-inline-flex align-items-center gap-2">
-                            Read More <iconify-icon icon="iconamoon:arrow-right-2" class="text-xl"></iconify-icon>
+                            View Book <iconify-icon icon="iconamoon:arrow-right-2" class="text-xl"></iconify-icon>
                         </a>
                         <a href="delete_book.php?book_id=' . $book_id . '" onclick="return confirm(\'Are you sure you want to delete this book?\');" class="btn btn-danger text-white px-12 py-10 d-inline-flex align-items-center gap-2">
                             Delete <iconify-icon icon="bx:trash" class="text-xl"></iconify-icon>
