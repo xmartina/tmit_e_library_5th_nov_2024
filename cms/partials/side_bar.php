@@ -29,12 +29,6 @@
                     <li>
                         <a href="<?=$siteUrl?>cms/librarian/add_book"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Add E-Book</a>
                     </li>
-                    <li>
-                        <a href="javascript:void(0);"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add Department</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Add Author</a>
-                    </li>
                 </ul>
             </li>
         </ul>
