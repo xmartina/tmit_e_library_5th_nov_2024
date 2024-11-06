@@ -20,7 +20,75 @@ include_once(__DIR__ . '/../../../cms/partials/header.php');
             <li class="fw-medium">Dashboard / <?=$page_name?></li>
         </ul>
     </div>
-
+    <div class="my-5 mx-3 p-4">
+        <?php
+        if (isset($_GET['msg'])) {
+            $msg = $_GET['msg'];
+            if ($msg == 'book_deleted_successfully') {
+                echo '<div class="alert alert-success bg-success-100 text-success-600 border-success-100 px-24 py-11 mb-0 fw-semibold text-lg radius-8 d-flex align-items-center justify-content-between" role="alert">
+                <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="akar-icons:double-check" class="icon text-xl"></iconify-icon>
+                    Book deleted successfully!
+                </div>
+                <button class="remove-button text-success-600 text-xxl line-height-1" onclick="this.parentElement.style.display=\'none\';">
+                    <iconify-icon icon="iconamoon:sign-times-light" class="icon"></iconify-icon>
+                </button>
+            </div>';
+            } elseif ($msg == 'error_deleting_book') {
+                echo '<div class="alert alert-danger bg-danger-100 text-danger-600 border-danger-100 px-24 py-11 mb-0 fw-semibold text-lg radius-8 d-flex align-items-center justify-content-between" role="alert">
+                <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="mdi:alert-circle-outline" class="icon text-xl"></iconify-icon>
+                    Error deleting book. Please try again.
+                </div>
+                <button class="remove-button text-danger-600 text-xxl line-height-1" onclick="this.parentElement.style.display=\'none\';">
+                    <iconify-icon icon="iconamoon:sign-times-light" class="icon"></iconify-icon>
+                </button>
+            </div>';
+            } elseif ($msg == 'invalid_book_id') {
+                echo '<div class="alert alert-danger bg-danger-100 text-danger-600 border-danger-100 px-24 py-11 mb-0 fw-semibold text-lg radius-8 d-flex align-items-center justify-content-between" role="alert">
+                <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="mdi:alert-circle-outline" class="icon text-xl"></iconify-icon>
+                    Invalid Command or Key Pressed. Please try again.
+                </div>
+                <button class="remove-button text-danger-600 text-xxl line-height-1" onclick="this.parentElement.style.display=\'none\';">
+                    <iconify-icon icon="iconamoon:sign-times-light" class="icon"></iconify-icon>
+                </button>
+            </div>';
+            } elseif ($msg == 'pdf_required') {
+                echo '<div class="alert alert-danger bg-danger-100 text-danger-600 border-danger-100 px-24 py-11 mb-0 fw-semibold text-lg radius-8 d-flex align-items-center justify-content-between" role="alert">
+                <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="mdi:alert-circle-outline" class="icon text-xl"></iconify-icon>
+                    PDF file is required.
+                </div>
+                <button class="remove-button text-danger-600 text-xxl line-height-1" onclick="this.parentElement.style.display=\'none\';">
+                    <iconify-icon icon="iconamoon:sign-times-light" class="icon"></iconify-icon>
+                </button>
+            </div>';
+            } elseif ($msg == 'error_uploading_cover') {
+                echo '<div class="alert alert-danger bg-danger-100 text-danger-600 border-danger-100 px-24 py-11 mb-0 fw-semibold text-lg radius-8 d-flex align-items-center justify-content-between" role="alert">
+                <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="mdi:alert-circle-outline" class="icon text-xl"></iconify-icon>
+                    Error uploading the book cover. Please try again.
+                </div>
+                <button class="remove-button text-danger-600 text-xxl line-height-1" onclick="this.parentElement.style.display=\'none\';">
+                    <iconify-icon icon="iconamoon:sign-times-light" class="icon"></iconify-icon>
+                </button>
+            </div>';
+            } elseif ($msg == 'cover_required') {
+                echo '<div class="alert alert-danger bg-danger-100 text-danger-600 border-danger-100 px-24 py-11 mb-0 fw-semibold text-lg radius-8 d-flex align-items-center justify-content-between" role="alert">
+                <div class="d-flex align-items-center gap-2">
+                    <iconify-icon icon="mdi:alert-circle-outline" class="icon text-xl"></iconify-icon>
+                    Book cover is required.
+                </div>
+                <button class="remove-button text-danger-600 text-xxl line-height-1" onclick="this.parentElement.style.display=\'none\';">
+                    <iconify-icon icon="iconamoon:sign-times-light" class="icon"></iconify-icon>
+                </button>
+            </div>';
+            }
+        }
+        ?>
+    </div>
+<div class="row">
     <?php
     // Ensure database connection is available
     if (!isset($conn)) {
@@ -64,6 +132,8 @@ include_once(__DIR__ . '/../../../cms/partials/header.php');
         echo '<p>No books found.</p>';
     }
     ?>
+</div>
+
 
 <?php
 include_once(__DIR__ . '/../../../cms/partials/footer.php');
