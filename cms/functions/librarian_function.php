@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
     if ($book_type == '1') { // If book type is PDF
         if (isset($_FILES['pdf_file']) && $_FILES['pdf_file']['error'] == 0) {
-            $pdf_dir = $rootDir . 'front_added/pdf/'; // Directory on the server
+            $pdf_dir = __DIR__ . '/../../front_added/pdf/'; // Directory on the server
             $pdf_link = $siteUrl . 'front_added/pdf/'; // URL to access the file
             $pdf_name = basename($_FILES['pdf_file']['name']);
             $pdf_path = $pdf_dir . $pdf_name; // Full server path
