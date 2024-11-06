@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
 // Handle Book Cover Upload
     if (isset($_FILES['book_cover']) && $_FILES['book_cover']['error'] == 0) {
-        $cover_dir = $rootDir . 'front_added/pdf/cover/'; // Directory on the server
+        $cover_dir = __DIR__ . '/../../front_added/pdf/cover/'; // Directory on the server
         $cover_link = $siteUrl . 'front_added/pdf/cover/'; // URL to access the file
         $cover_name = basename($_FILES['book_cover']['name']);
         $cover_path = $cover_dir . $cover_name; // Full server path
