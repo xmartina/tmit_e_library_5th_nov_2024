@@ -1,9 +1,8 @@
 <?php
 $page_name = 'Add E-Book';
 $rootDir = '/home/multistream6/domains/thomas.matagram.com/public_html/';
-$siteUrl = 'https://thomas.matagram.com/';
-include_once($rootDir . 'cms/functions/librarian_function.php');
-include_once($rootDir . 'cms/partials/header.php');
+include_once(__DIR__ . '/../../../cms/functions/librarian_function.php');
+include_once(__DIR__ . '/../../../cms/partials/header.php');
 ?>
 
 <script>
@@ -28,7 +27,7 @@ include_once($rootDir . 'cms/partials/header.php');
         <h6 class="fw-semibold mb-0">Add E-Book</h6>
         <ul class="d-flex align-items-center gap-2">
             <li class="fw-medium">
-                <a href="index.html" class="d-flex align-items-center gap-1 hover-text-primary">
+                <a href="<?=$site_url?>" class="d-flex align-items-center gap-1 hover-text-primary">
                     <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
                     Dashboard
                 </a>
@@ -169,7 +168,7 @@ include_once($rootDir . 'cms/partials/header.php');
                                 }
 
                                 // Fetch departments from the database
-                                $sql = "SELECT id, dep_name FROM departments";
+                                $sql = "SELECT * FROM departments";
                                 $result = $landing_conn->query($sql);
 
                                 // Check if the query was successful
