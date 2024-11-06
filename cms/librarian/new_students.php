@@ -27,7 +27,7 @@ if($student_img == ''){
 
 <div class="d-flex align-items-center justify-content-between gap-3 mb-32">
     <div class="d-flex align-items-center">
-        <img src="<?=$siteUrl?>cms/assets/added/img/student/<?=$student_img?>" alt="<?=$full_name?>"
+        <img src="<?=$portal_url.$student_img?>" alt="<?=$full_name?>"
              class="w-40-px h-40-px rounded-circle flex-shrink-0 me-12 overflow-hidden">
         <div class="flex-grow-1">
             <h6 class="text-md mb-0"><?=$full_name?></h6>
