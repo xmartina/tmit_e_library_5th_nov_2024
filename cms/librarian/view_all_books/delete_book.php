@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once(__DIR__ . '/../../cms/functions/main_function.php'); // Include database connection file
+include_once(__DIR__ . '/../../../cms/functions/main_function.php'); // Include database connection file
 
 if (!isset($conn)) {
     die("Database connection error.");
