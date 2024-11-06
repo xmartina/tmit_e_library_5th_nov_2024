@@ -16,17 +16,17 @@ if (isset($_GET['book_id'])) {
     $stmt_delete->bind_param("i", $book_id);
 
     if ($stmt_delete->execute()) {
-        header('Location: /cms/librarian/book_list.php?msg=book_deleted_successfully');
+        header('Location: /cms/librarian/view_all_books?msg=book_deleted_successfully');
         exit();
     } else {
-        header('Location: /cms/librarian/book_list.php?msg=error_deleting_book');
+        header('Location: /cms/librarian/view_all_books?msg=error_deleting_book');
         exit();
     }
 
     $stmt_delete->close();
 } else {
     // No book ID provided
-    header('Location: /cms/librarian/book_list.php?msg=invalid_book_id');
+    header('Location: /cms/librarian/view_all_books?msg=invalid_book_id');
     exit();
 }
 
