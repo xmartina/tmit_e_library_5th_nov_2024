@@ -30,7 +30,7 @@ include_once(__DIR__ . '/../../cms/partials/header.php');
                     <div class="card-body">
                         <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between">
                             <h6 class="mb-2 fw-bold text-lg mb-0">New Students</h6>
-                            <a href="<?$portal_url?>"
+                            <a href="<?=$portal_url?>"
                                class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
                                 View All
                                 <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
