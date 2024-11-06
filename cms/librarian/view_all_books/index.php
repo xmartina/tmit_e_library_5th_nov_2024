@@ -127,7 +127,7 @@ include_once(__DIR__ . '/../../../cms/partials/header.php');
             echo '
         <div class="col-xxl-3 col-sm-6">
             <div class="card h-100 radius-12">
-                <img src="' . $book_cover . '" class="card-img-top" alt="' . $book_name . ' cover image">
+                <img style="max-height:300px;max-width: 100%;object-fit: cover;object-position: center;" src="' . $book_cover . '" class="card-img-top" alt="' . $book_name . ' cover image">
                 <div class="card-body p-16 text-end">
                     <h5 class="card-title text-lg text-primary-light mb-6">' . $book_name . '</h5>
                     <p class="card-text text-neutral-600">Author: ' . $author . '</p>
