@@ -5,6 +5,21 @@ include_once(__DIR__ . '/../../../cms/functions/librarian_function.php');
 include_once(__DIR__ . '/../../../cms/partials/header.php');
 ?>
 
+<div class="dashboard-main-body">
+
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
+        <h6 class="fw-semibold mb-0">Add E-Book</h6>
+        <ul class="d-flex align-items-center gap-2">
+            <li class="fw-medium">
+                <a href="<?=$site_url?>" class="d-flex align-items-center gap-1 hover-text-primary">
+                    <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
+                    Dashboard
+                </a>
+            </li>
+            <li>-</li>
+            <li class="fw-medium">Dashboard / Add E-Book</li>
+        </ul>
+    </div>
 
 <div class="col-xxl-3 col-sm-6">
     <div class="card h-100 radius-12">
@@ -24,7 +39,7 @@ include_once(__DIR__ . '/../../../cms/partials/header.php');
         </div>
     </div>
 </div>
-
+</div>
 <?php
 include_once(__DIR__ . '/../../../cms/partials/footer.php');
 ?>
