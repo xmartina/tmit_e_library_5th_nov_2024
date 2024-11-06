@@ -212,5 +212,5 @@ include_once(__DIR__ . '/../../../cms/partials/header.php');
 </div>
 
 <?php
-include_once($rootDir . 'cms/partials/footer.php');
+include_once(__DIR__ . '/../../../cms/partials/footer.php');
 ?>
